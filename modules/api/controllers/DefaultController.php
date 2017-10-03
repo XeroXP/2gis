@@ -17,4 +17,31 @@ class DefaultController extends Controller
     {
         return $this->render('index');
     }
+
+    /**
+     * Renders the firm view for the module
+     * @return string
+     */
+    public function actionFirm()
+    {
+        return $this->render('firm');
+    }
+
+    /**
+     * Renders the building view for the module
+     * @return string
+     */
+    public function actionBuilding()
+    {
+        return $this->render('building');
+    }
+
+    /**
+     * Renders the category view for the module
+     * @return string
+     */
+    public function actionCategory()
+    {
+        return $this->render('category');
+    }
 }
