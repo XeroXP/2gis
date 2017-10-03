@@ -41,9 +41,9 @@ AppAsset::register($this);
             ['label' => 'Главная', 'url' => ['/']],
             ['label' => 'API 1.0',
                 'items' => [
-                    ['label' => 'Фирма', 'url' => ['/']],
-                    ['label' => 'Здание', 'url' => ['/']],
-                    ['label' => 'Рубрика', 'url' => ['/']],
+                    ['label' => 'Фирма', 'url' => ['/api/default/firm']],
+                    ['label' => 'Здание', 'url' => ['/api/default/building']],
+                    ['label' => 'Рубрика', 'url' => ['/api/default/category']],
             ]],
         ],
     ]);

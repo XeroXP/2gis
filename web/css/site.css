@@ -121,7 +121,10 @@ a.desc:after {
 .navbar-nav > li > a{
     font-family: 'Roboto Condensed', sans-serif;
     color: #000;
+}
 
+.navbar-nav > li.active > a{
+    color: #fff!important;
 }
 
 .navbar-nav > li > ul.dropdown-menu > li > a{
