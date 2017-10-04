@@ -18,6 +18,14 @@ composer update
 
 
 ## Демоданные
-TODO:: Сделать модуль фикстур
+Применить фикстуры:
+```php
+./yii fixture Category --namespace='app\modules\api\fixtures'
+./yii fixture Building --namespace='app\modules\api\fixtures'
+./yii fixture Firm --namespace='app\modules\api\fixtures'
+./yii fixture FirmCategory --namespace='app\modules\api\fixtures'
+
+```
+TODO:: Сделать одной командой bash
 
 
