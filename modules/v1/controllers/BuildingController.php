@@ -10,6 +10,6 @@ use yii\rest\ActiveController;
 class BuildingController extends ActiveController
 {
 
-    public $modelClass = 'app\modules\api\models\Building';
+    public $modelClass = 'app\modules\gis\models\Building';
 
 }

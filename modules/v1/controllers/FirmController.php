@@ -10,6 +10,6 @@ use yii\rest\ActiveController;
 class FirmController extends ActiveController
 {
 
-    public $modelClass = 'app\modules\api\models\Firm';
+    public $modelClass = 'app\modules\gis\models\Firm';
 
 }
