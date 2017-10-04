@@ -17,14 +17,14 @@ $config = [
         'main' => [
             'class' => 'app\modules\main\Module',
         ],
-        'api' => [
-            'class' => 'app\modules\api\Module',
+        'user' => [
+            'class' => 'app\modules\user\Module',
+        ],
+        'gis' => [
+            'class' => 'app\modules\gis\Module',
         ],
         'v1' => [
             'class' => 'app\modules\v1\Module',
-        ],
-        'user' => [
-            'class' => 'app\modules\user\Module',
         ],
 
     ],
