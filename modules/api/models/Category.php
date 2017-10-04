@@ -45,6 +45,24 @@ class Category extends \yii\db\ActiveRecord
         ];
     }
 
+
+    public function fields()
+    {
+        return [
+            'id',
+            'name',
+        ];
+    }
+
+    public function extraFields()
+    {
+        return [
+            'firms',
+        ];
+    }
+
+
+
     /**
      * @return \yii\db\ActiveQuery
      */

@@ -3,6 +3,7 @@
 namespace app\modules\api\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%firm}}".
@@ -19,6 +20,19 @@ use Yii;
  */
 class Firm extends \yii\db\ActiveRecord
 {
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => false,
+            ],
+        ];
+    }
+
+
     /**
      * @inheritdoc
      */
@@ -33,7 +47,7 @@ class Firm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'building_id', 'created_at'], 'required'],
+            [['name', 'building_id'], 'required'],
             [['building_id', 'created_at'], 'integer'],
             [['name', 'phones'], 'string', 'max' => 255],
             [['building_id'], 'exist', 'skipOnError' => true, 'targetClass' => Building::className(), 'targetAttribute' => ['building_id' => 'id']],
@@ -53,6 +67,20 @@ class Firm extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
         ];
     }
+
+    public function fields()
+    {
+        return [
+            'id',
+            'name',
+            'phones',
+            'building',
+            'categories',
+        ];
+    }
+
+
+
 
     /**
      * @return \yii\db\ActiveQuery
@@ -76,5 +104,15 @@ class Firm extends \yii\db\ActiveRecord
     public function getCategories()
     {
         return $this->hasMany(Category::className(), ['id' => 'category_id'])->viaTable('{{%firm_category}}', ['firm_id' => 'id']);
+    }
+
+
+    /**
+     * @inheritdoc
+     * @return \app\modules\api\query\FirmQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new \app\modules\api\query\FirmQuery(get_called_class());
     }
 }

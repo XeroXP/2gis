@@ -3,6 +3,8 @@
 namespace app\modules\api\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "{{%building}}".
@@ -17,6 +19,18 @@ use Yii;
  */
 class Building extends \yii\db\ActiveRecord
 {
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => false,
+            ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -31,7 +45,7 @@ class Building extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['address', 'created_at'], 'required'],
+            [['address'], 'required'],
             [['geo_lat', 'geo_lon'], 'number'],
             [['created_at'], 'integer'],
             [['address'], 'string', 'max' => 255],
@@ -52,6 +66,25 @@ class Building extends \yii\db\ActiveRecord
         ];
     }
 
+
+    public function fields()
+    {
+        return [
+            'id',
+            'address',
+            'geo_lat',
+            'geo_lon',
+        ];
+    }
+
+    public function extraFields()
+    {
+        return [
+            'firms',
+        ];
+    }
+
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -59,4 +92,16 @@ class Building extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Firm::className(), ['building_id' => 'id']);
     }
+
+
+    /**
+     * @inheritdoc
+     * @return \app\modules\api\query\BuildingQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new \app\modules\api\query\BuildingQuery(get_called_class());
+    }
+
+
 }
