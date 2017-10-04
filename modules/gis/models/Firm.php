@@ -109,10 +109,10 @@ class Firm extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return \gis\modules\gis\query\FirmQuery the active query used by this AR class.
+     * @return \app\modules\gis\query\FirmQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \gis\modules\gis\query\FirmQuery(get_called_class());
+        return new \app\modules\gis\query\FirmQuery(get_called_class());
     }
 }
