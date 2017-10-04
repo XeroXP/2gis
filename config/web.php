@@ -23,6 +23,9 @@ $config = [
         'v1' => [
             'class' => 'app\modules\v1\Module',
         ],
+        'user' => [
+            'class' => 'app\modules\user\Module',
+        ],
 
     ],
     'components' => [
@@ -32,6 +35,11 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+        ],
+        'user' => [
+            'identityClass' => 'app\modules\user\models\User',
+            'enableAutoLogin' => true,
+            'loginUrl' => ['user/default/login'],
         ],
         'errorHandler' => [
             'errorAction' => 'main/default/error',
@@ -58,6 +66,10 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/firm'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/building'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/category'],
+
                 '' => 'main/default/index',
                 'contact' => 'main/contact/index',
                 '<_a:error>' => 'main/default/<_a>',

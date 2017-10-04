@@ -44,7 +44,14 @@ AppAsset::register($this);
                     ['label' => 'Фирма', 'url' => ['/api/default/firm']],
                     ['label' => 'Здание', 'url' => ['/api/default/building']],
                     ['label' => 'Рубрика', 'url' => ['/api/default/category']],
-            ]],
+                ]],
+            ['label' => 'CRUD',
+                'items' => [
+                    ['label' => 'Фирма', 'url' => ['/api/firm']],
+                    ['label' => 'Здание', 'url' => ['/api/building']],
+                    ['label' => 'Рубрика', 'url' => ['/api/category']],
+                    ['label' => 'Рубрика->Фирма', 'url' => ['/api/firm-category']],
+                ]],
         ],
     ]);
     NavBar::end();
