@@ -11,6 +11,7 @@
 ```
 /v1/firm                         Список всех фирм
 /v1/firm/1                       Фирма с id=1 
+/v1/firm/1?expand=building       дополнительные поля (building, categories)
 ```
 
 **Категория**

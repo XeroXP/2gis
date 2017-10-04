@@ -74,6 +74,12 @@ class Firm extends \yii\db\ActiveRecord
             'id',
             'name',
             'phones',
+        ];
+    }
+
+    public function extraFields()
+    {
+        return [
             'building',
             'categories',
         ];
