@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\api\models;
+namespace app\modules\gis\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -109,10 +109,10 @@ class Firm extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return \gis\modules\api\query\FirmQuery the active query used by this AR class.
+     * @return \gis\modules\gis\query\FirmQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \gis\modules\api\query\FirmQuery(get_called_class());
+        return new \gis\modules\gis\query\FirmQuery(get_called_class());
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\api\query;
+namespace app\modules\gis\query;
 
 class BuildingQuery extends \yii\db\ActiveQuery
 {
@@ -9,7 +9,7 @@ class BuildingQuery extends \yii\db\ActiveQuery
     }*/
     /**
      * @inheritdoc
-     * @return \gis\modules\api\models\Building[]|array
+     * @return \app\modules\gis\models\Building[]|array
      */
     public function all($db = null)
     {
@@ -17,7 +17,7 @@ class BuildingQuery extends \yii\db\ActiveQuery
     }
     /**
      * @inheritdoc
-     * @return \gis\modules\api\models\Building|array|null
+     * @return \app\modules\gis\models\Building|array|null
      */
     public function one($db = null)
     {

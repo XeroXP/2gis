@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\api\search;
+namespace app\modules\gis\search;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\api\models\FirmCategory;
+use app\modules\gis\models\FirmCategory;
 
 /**
  * FirmCategorySearch represents the model behind the search form of `app\modules\api\models\FirmCategory`.

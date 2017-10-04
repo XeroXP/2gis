@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\api\fixtures;
+namespace app\modules\gis\fixtures;
 
 use yii\test\ActiveFixture;
 
 class FirmFixture extends ActiveFixture
 {
-    public $modelClass = 'app\modules\api\models\Firm';
-    public $dataFile = '@app/modules/api/fixtures/data/firm.php';
+    public $modelClass = 'app\modules\gis\models\Firm';
+    public $dataFile = '@app/modules/gis/fixtures/data/firm.php';
 }

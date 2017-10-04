@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\api\models;
+namespace app\modules\gis\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -96,11 +96,11 @@ class Building extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return \gis\modules\api\query\BuildingQuery the active query used by this AR class.
+     * @return \gis\modules\gis\query\BuildingQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \gis\modules\api\query\BuildingQuery(get_called_class());
+        return new \gis\modules\gis\query\BuildingQuery(get_called_class());
     }
 
 
