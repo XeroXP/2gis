@@ -16,7 +16,6 @@ class m171003_210922_create_table_firm extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'building_id' => $this->integer()->notNull(),
-            'phones' => $this->string(),
             'created_at' => $this->integer()->notNull(),
         ]);
 
