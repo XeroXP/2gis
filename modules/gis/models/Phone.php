@@ -45,6 +45,13 @@ class Phone extends \yii\db\ActiveRecord
         ];
     }
 
+    public function fields()
+    {
+        return [
+            'phone',
+        ];
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
