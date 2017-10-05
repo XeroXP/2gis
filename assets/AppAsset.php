@@ -20,8 +20,10 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         '//fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400&subset=latin,cyrillic',
+        '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css',
     ];
     public $js = [
+        '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
