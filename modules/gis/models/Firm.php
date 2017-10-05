@@ -4,6 +4,9 @@ namespace app\modules\gis\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\Url;
+use yii\web\Link;
+use yii\web\Linkable;
 
 /**
  * This is the model class for table "{{%firm}}".
@@ -18,7 +21,7 @@ use yii\behaviors\TimestampBehavior;
  * @property FirmCategory[] $firmCategories
  * @property Category[] $categories
  */
-class Firm extends \yii\db\ActiveRecord
+class Firm extends \yii\db\ActiveRecord implements Linkable
 {
 
     public function behaviors()
@@ -68,15 +71,20 @@ class Firm extends \yii\db\ActiveRecord
         ];
     }
 
-    public function fields()
+    /*
+     * HATEOAS
+     */
+    public function getLinks()
     {
         return [
-            'id',
-            'name',
-            'phones',
+            Link::REL_SELF => Url::to(['firm/view', 'id' => $this->id], true),
         ];
     }
 
+
+
+    // Связанные модели
+    // доступны как ?expand=building,categories
     public function extraFields()
     {
         return [
@@ -84,7 +92,6 @@ class Firm extends \yii\db\ActiveRecord
             'categories',
         ];
     }
-
 
 
 
