@@ -14,7 +14,6 @@ use yii\web\Linkable;
  * @property int $id
  * @property string $name
  * @property int $building_id
- * @property string $phones
  * @property int $created_at
  *
  * @property Building $building
@@ -52,7 +51,7 @@ class Firm extends \yii\db\ActiveRecord implements Linkable
         return [
             [['name', 'building_id'], 'required'],
             [['building_id', 'created_at'], 'integer'],
-            [['name', 'phones'], 'string', 'max' => 255],
+            [['name'], 'string', 'max' => 255],
             [['building_id'], 'exist', 'skipOnError' => true, 'targetClass' => Building::className(), 'targetAttribute' => ['building_id' => 'id']],
         ];
     }
@@ -66,7 +65,6 @@ class Firm extends \yii\db\ActiveRecord implements Linkable
             'id' => 'ID',
             'name' => 'Name',
             'building_id' => 'Building ID',
-            'phones' => 'Phones',
             'created_at' => 'Created At',
         ];
     }
@@ -90,6 +88,7 @@ class Firm extends \yii\db\ActiveRecord implements Linkable
         return [
             'building',
             'categories',
+            'phones',
         ];
     }
 
@@ -102,6 +101,8 @@ class Firm extends \yii\db\ActiveRecord implements Linkable
     {
         return $this->hasOne(Building::className(), ['id' => 'building_id']);
     }
+
+
 
     /**
      * @return \yii\db\ActiveQuery
@@ -117,6 +118,25 @@ class Firm extends \yii\db\ActiveRecord implements Linkable
     public function getCategories()
     {
         return $this->hasMany(Category::className(), ['id' => 'category_id'])->viaTable('{{%firm_category}}', ['firm_id' => 'id']);
+    }
+
+
+
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFirmPhones()
+    {
+        return $this->hasMany(FirmPhone::className(), ['firm_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPhones()
+    {
+        return $this->hasMany(Phone::className(), ['id' => 'phone_id'])->viaTable('{{%firm_phone}}', ['firm_id' => 'id']);
     }
 
 
