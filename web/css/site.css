@@ -132,6 +132,38 @@ a.desc:after {
     color: #000;
 }
 
-.navbar-fixed-top{
+.navbar{
     box-shadow: 0 0 7px 2px rgba(0,0,0,.1);
+    margin-bottom: 0;
+}
+
+
+
+.section{
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.block-main{
+    background: #b6edf5;
+    background: url(../images/01.jpg) center bottom repeat;
+    min-height: 600px;
+}
+
+.block-about{
+    box-shadow: inset rgba(0,0,0,.06)0 3px 5px,inset rgba(0,0,0,.06)0 -3px 5px;
+    background: #fbfbf7;
+}
+
+.block__item{
+    height: 380px;
+    padding: 30px 0;
+
+}
+
+.block-main > .block__item{
+    background: rgba(0,0,0,0.3);
+}
+h1, h2, h3{
+    font-family: 'Roboto Condensed', sans-serif;
 }

@@ -31,25 +31,11 @@ AppAsset::register($this);
     NavBar::begin([
         'brandLabel' => 'Test to 2 GIS',
         'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Главная', 'url' => ['/']],
-            ['label' => 'Описание', 'url' => ['/about']],
-        ],
     ]);
     NavBar::end();
     ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
+    <div class="">
         <?= $content ?>
     </div>
 </div>
@@ -58,7 +44,7 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; Test work to 2GIS <?= date('Y') ?></p>
 
-        <p class="pull-right"><a href="https://github.com/Maksclub/2gis">Project on Github</a></p>
+        <p class="pull-right">Код проекта <a href="https://github.com/Maksclub/2gis">на Гитхабе</a></p>
     </div>
 </footer>
 
