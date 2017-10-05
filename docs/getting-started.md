@@ -20,10 +20,12 @@ composer update
 ## Демоданные
 Применить фикстуры:
 ```php
-./yii fixture Category --namespace='app\modules\api\fixtures'
-./yii fixture Building --namespace='app\modules\api\fixtures'
-./yii fixture Firm --namespace='app\modules\api\fixtures'
-./yii fixture FirmCategory --namespace='app\modules\api\fixtures'
+./yii fixture Category --namespace='app\modules\gis\fixtures'
+./yii fixture Building --namespace='app\modules\gis\fixtures'
+./yii fixture Firm --namespace='app\modules\gis\fixtures'
+./yii fixture FirmCategory --namespace='app\modules\gis\fixtures'
+./yii fixture Phone --namespace='app\modules\gis\fixtures'
+./yii fixture FirmPhone --namespace='app\modules\gis\fixtures'
 
 ```
 TODO:: Сделать одной командой bash
